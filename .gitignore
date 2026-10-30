@@ -1,0 +1,11 @@
+#carpeta de dependencias
+node_modules/
+
+#carpeta de JS compilado
+dist/
+
+#archivo de secretos
+.env
+
+#archivos de log
+*.log
