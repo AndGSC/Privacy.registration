@@ -1,3 +1,7 @@
+# Levanta PostgreSQL 17 en un contenedor. Toma credenciales del .env,
+# expone el puerto solo en 127.0.0.1, persiste los datos en un volumen,
+# ejecuta init.sql en instalaciones nuevas y verifica disponibilidad con un healthcheck.
+
 services:
   db:
     image: postgres:17
