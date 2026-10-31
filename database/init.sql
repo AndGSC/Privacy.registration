@@ -23,3 +23,11 @@ CREATE TABLE IF NOT EXISTS user_pii(
     email_lookup    BYTEA               NOT NULL UNIQUE,
     phone_enc       BYTEA
 );
+
+CREATE TABLE IF NOT EXISTS audit_log(
+    id              BIGINT              GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id         UUID                REFERENCES users(id) ON DELETE SET NULL,
+    action          TEXT                NOT NULL,
+    details_enc     BYTEA               ,
+    created_at      TIMESTAMPTZ         NOT NULL DEFAULT NOW()
+);
