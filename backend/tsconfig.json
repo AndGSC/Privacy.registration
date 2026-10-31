@@ -1,3 +1,6 @@
+// Configura el compilador de TypeScript: código fuente en src/, salida en dist/,
+// verificación estricta de tipos y entorno Node sin tipos de navegador.
+
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {

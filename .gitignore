@@ -1,3 +1,6 @@
+# Excluye del repositorio lo que se regenera (node_modules, dist),
+# los secretos (.env) y los logs, que podrían contener datos sensibles.
+
 #carpeta de dependencias
 node_modules/
 

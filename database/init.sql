@@ -1,3 +1,8 @@
+-- Define el estado inicial de la base de datos desde cero. Es idempotente.
+-- Habilita pgcrypto y crea: users (datos generales y consentimiento),
+-- user_credentials (hash de contraseña), user_pii (PII cifrada e índice ciego del correo)
+-- y audit_log (eventos con detalles cifrados). Las migraciones no van aquí.
+
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS users (
