@@ -8,12 +8,13 @@ async function main(): Promise<void>{ //función asincrónica con un await para 
     const result = await pool.query("SELECT current_database() AS db");
     const dbname = result.rows[0]?.db;
     console.log(`Conectado a ${dbname}. API configurada en el puerto ${env.port}`);
+
     await pool.end();
 }
 
 
-//Función anónina o lambda que se ejecuta solo si el main falla.
+//Función anónima o lambda que se ejecuta solo si el main falla.
 main().catch((err) => {
-    console.error("Database connection failed: ", err.code);
+    console.error("Database connection failed: ", err.code, err.message);
     process.exit(1);
 });
